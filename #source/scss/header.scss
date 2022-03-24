@@ -1,0 +1,177 @@
+//====================================================================================================
+.header {
+	position: fixed;
+	height: 110px;
+	font-family: 'PT Sans Caption';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 21px;
+	color: #364844;
+	width: 100%;
+
+
+	// .header__row
+
+	&__row {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// .header__top
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		flex: 1 1 67px;
+		max-width: $mw + px;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	// .header__bodyleft
+
+	&__bodyleft {
+		display: flex;
+		align-items: center;
+	}
+
+	// .header__logo
+
+	&__logo {
+		margin: 0px 35px 0px 0px;
+	}
+
+	// .header__adress
+
+	&__adress {
+		position: relative;
+		text-align: center;
+		padding: 0px 0px 0px 25px;
+		span {
+			color: #868686;
+		}
+		&::before {
+			content: '';
+			background: url('../../img/icons/geo.svg') center no-repeat;
+			position: absolute;
+			width: 16px;
+			height: 33px;
+			top: -8px;
+			left: 0;
+		}
+	}
+
+	// .header__bodyright
+
+	&__bodyright {
+		display: flex;
+		align-items: center;
+	}
+
+	// .header__phone
+
+	&__phone {
+		position: relative;
+		font-size: 16px;
+		line-height: 24px;
+		margin: 0px 35px 0px 0px;
+		padding: 0px 0px 0px 35px;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: url('../../img/icons/whatsapp.svg') center no-repeat ;
+			height: 28px;
+			width: 28px;
+			// border-radius: 50%;
+		}
+	}
+
+	// .header__button
+
+	&__button {
+		width: 196px;
+		height: 43px;
+		background: #0DBC91;
+		color: #FFFFFF;
+		border-radius: 50px;
+		padding: 0px 23px;
+		line-height: 43px;
+	}
+
+	// .header__bottom
+
+	&__bottom {
+		flex: 1 1 43px;
+		background: #1FA181;
+		display: flex;
+		align-items: center;
+	}
+
+	// .header__menu
+
+	&__menu {
+
+	}
+}
+
+.menu {
+
+	// .menu__icon
+
+	&__icon {}
+
+	// .menu__body
+
+	&__body {
+
+	}
+
+	// .menu__list
+
+	&__list {
+		display: flex;
+		li {
+			margin: 0px 30px 0px 0px;
+			&:last-child {
+				margin: 0px;
+			}
+		}
+	}
+
+	// .menu__link
+
+	&__link {
+		font-size: 16px;
+		line-height: 24px;
+		color: #FFFFFF;
+
+	}
+}
+
+//====================================================================================================
+/*
+	Стиль иконки бургера
+	.icon-menu{
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width:30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
+			&:first-child{top: 0px;}
+			&:last-child{top: auto;bottom: 0px;}
+		}
+		&.active{
+			span{@include scale(0);
+				&:first-child{@include rotate(-45deg);top: 8px;}
+				&:last-child{@include rotate(45deg);bottom: 8px;}
+			}
+		}
+	}
+*/
