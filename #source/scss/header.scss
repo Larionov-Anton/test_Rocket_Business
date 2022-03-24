@@ -9,12 +9,16 @@
 	line-height: 21px;
 	color: #364844;
 	width: 100%;
-
+	@media (max-width:$md3+px){
+		height: 34px; 
+		background: #F7F7F7;
+	}
 
 	// .header__row
 
 	&__row {
-		display: flex;
+		// display: flex;
+		display: none;
 		flex-direction: column;
 	}
 
@@ -27,6 +31,16 @@
 		max-width: $mw + px;
 		margin: 0 auto;
 		width: 100%;
+		@media (max-width: $md1+px) {
+			max-width: 970px;
+		}
+		@media (max-width: $md2+px) {
+			max-width: 750px;
+		}
+		@media (max-width: $md3+px) {
+			max-width: none;
+			padding: 0 10px;
+		}
 	}
 
 	// .header__bodyleft
@@ -151,19 +165,65 @@
 	}
 }
 
+.header {
+
+	
+
+	// .header__bodymobile 
+
+	&__bodymobile {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	// .header__mobile
+
+	&__mobile {
+
+	}
+
+	// .header__logo
+
+	&__logo {}
+
+	// .header__phonelocation
+
+	&__phonelocation {
+		font-family: 'PT Sans Caption';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 24px;
+		text-align: right;
+		color: #364844;
+		span {
+			font-weight: 400;
+			font-size: 13px;
+		}
+	}
+
+	// .header__menu
+
+	&__menu {}
+}
+
+
+
+
 //====================================================================================================
-/*
-	Стиль иконки бургера
+
+	// Стиль иконки бургера
 	.icon-menu{
 		display: block;
 		position: absolute;
 		top: 18px;
-		right: 10px;
+		left: 10px;
 		width:30px;
 		height: 18px;
 		cursor: pointer;
 		z-index: 5;
-		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
+		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #1FA181;
 			&:first-child{top: 0px;}
 			&:last-child{top: auto;bottom: 0px;}
 		}
@@ -174,4 +234,4 @@
 			}
 		}
 	}
-*/
+

@@ -781,10 +781,14 @@ body.ie .ibg img {
 	color: #364844;
 	width: 100%;
 }
+@media (max-width: 767.98px) {
+	.header {
+		height: 34px;
+		background: #F7F7F7;
+	}
+}
 .header__row {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
+	display: none;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
@@ -803,6 +807,22 @@ body.ie .ibg img {
 	max-width: 1140px;
 	margin: 0 auto;
 	width: 100%;
+}
+@media (max-width: 1152px) {
+	.header__top {
+		max-width: 970px;
+	}
+}
+@media (max-width: 991.98px) {
+	.header__top {
+		max-width: 750px;
+	}
+}
+@media (max-width: 767.98px) {
+	.header__top {
+		max-width: none;
+		padding: 0 10px;
+	}
 }
 .header__bodyleft {
 	display: -webkit-box;
@@ -894,29 +914,76 @@ body.ie .ibg img {
 	color: #FFFFFF;
 }
 
-/*
-	Стиль иконки бургера
-	.icon-menu{
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width:30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
-			&:first-child{top: 0px;}
-			&:last-child{top: auto;bottom: 0px;}
-		}
-		&.active{
-			span{@include scale(0);
-				&:first-child{@include rotate(-45deg);top: 8px;}
-				&:last-child{@include rotate(45deg);bottom: 8px;}
-			}
-		}
-	}
-*/
+.header__bodymobile {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+.header__phonelocation {
+	font-family: "PT Sans Caption";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: right;
+	color: #364844;
+}
+.header__phonelocation span {
+	font-weight: 400;
+	font-size: 13px;
+}
+.icon-menu {
+	display: block;
+	position: absolute;
+	top: 18px;
+	left: 10px;
+	width: 30px;
+	height: 18px;
+	cursor: pointer;
+	z-index: 5;
+}
+.icon-menu span {
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	top: 8px;
+	left: 0px;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #1FA181;
+}
+.icon-menu span:first-child {
+	top: 0px;
+}
+.icon-menu span:last-child {
+	top: auto;
+	bottom: 0px;
+}
+.icon-menu.active span {
+	-ms-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+.icon-menu.active span:first-child {
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 8px;
+}
+.icon-menu.active span:last-child {
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	bottom: 8px;
+}
+
 .main-screen {
 	padding: 110px 0px 0px 0px;
 }
