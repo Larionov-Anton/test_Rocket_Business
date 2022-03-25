@@ -88,22 +88,50 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 
 .main-screen {
+
 		padding: 110px 0px 0px 0px;
+		display: flex;
+		height: 533px;
+
 		// .main-screen__textbody
 
-		&__textbody {}
+		&__textbody {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			flex: 1 1 50%;
+			background: #F8FBFA;	
+		}
 
 		// .main-screen__tittle
 
-		&__tittle {}
+		&__tittle {
+			font-family: 'PT Sans Caption';
+			font-style: normal;
+			font-weight: 700;
+			font-size: 36px;
+			line-height: 47px;
+			color: #364844;
+			max-width: 416px;
+			margin: 0px 0px 14px 0px;
+		}
 
 		// .main-screen__text
 
-		&__text {}
+		&__text {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			max-width: 416px;
+		}
 
 		// .main-screen__image
 
-		&__image {}
+		&__image {
+			flex: 1 1 50%;
+			height: 553px;
+		}
 }
 
 //====================================================================================================
