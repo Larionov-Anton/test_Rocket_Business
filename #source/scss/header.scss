@@ -10,16 +10,18 @@
 	color: #364844;
 	width: 100%;
 	@media (max-width:$md3+px){
-		height: 34px; 
+		height: 65px; 
 		background: #F7F7F7;
 	}
 
 	// .header__row
 
 	&__row {
-		// display: flex;
-		display: none;
+		display: flex;
 		flex-direction: column;
+		@media (max-width:$md3+px){
+			display: none; 
+		}
 	}
 
 	// .header__top
@@ -113,6 +115,11 @@
 		border-radius: 50px;
 		padding: 0px 23px;
 		line-height: 43px;
+		@media (max-width:$md3+px){
+			 margin: 39px 0px 0px 19px; 
+			 background: #F6F6F6;
+			 color: #1FA181;
+		}
 	}
 
 	// .header__bottom
@@ -140,17 +147,38 @@
 	// .menu__body
 
 	&__body {
-
+		@media (max-width:$md3+px){
+			background: rgba(69, 146, 127, 0.9); 
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			margin: 67px 0px 0px 0px;
+			@include tr(-200%, 0, 0);
+			@include anim(0.8s,0s);
+			&.active {
+				@include tr(0, 0, 0);
+			}
+		}
+		
 	}
 
 	// .menu__list
 
 	&__list {
 		display: flex;
+		@media (max-width:$md3+px){
+			 flex-direction: column; 
+			 padding: 48px 0px 0px 19px;
+		}
 		li {
 			margin: 0px 30px 0px 0px;
 			&:last-child {
 				margin: 0px;
+			}
+			@media (max-width:$md3+px){
+				 margin: 0px 0px 10px 0px; 
 			}
 		}
 	}
@@ -169,23 +197,40 @@
 
 	
 
+
+
+	// .header__mobile
+
+	&__mobile {
+		display: none;
+		height: 65px; 
+		background: #F7F7F7;
+		padding: 0px 18px;
+		@media (max-width:$md3+px){
+			 display: block; 
+		}
+	}
+
 	// .header__bodymobile 
 
 	&__bodymobile {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	// .header__mobile
-
-	&__mobile {
-
+		height: 100%;
 	}
 
 	// .header__logo
 
-	&__logo {}
+	&__logo {
+		img {
+			width: 62px;
+			height: 18.32px;
+		}
+		@media (max-width:$md3+px){
+			padding: 0px 0px 0px 97px; 
+		}
+	}
 
 	// .header__phonelocation
 
@@ -215,23 +260,26 @@
 
 	// Стиль иконки бургера
 	.icon-menu{
-		display: block;
+		display: none;
 		position: absolute;
-		top: 18px;
-		left: 10px;
-		width:30px;
-		height: 18px;
+		top: 18.5px;
+		left: 18px;
+		width:37px;
+		height: 26px;
 		cursor: pointer;
 		z-index: 5;
-		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #1FA181;
+		span{@include anim(0.3s,0s);top: 11px;left: 0px;position: absolute;width: 100%;height: 4px;background-color: #1FA181;
 			&:first-child{top: 0px;}
 			&:last-child{top: auto;bottom: 0px;}
 		}
 		&.active{
 			span{@include scale(0);
-				&:first-child{@include rotate(-45deg);top: 8px;}
-				&:last-child{@include rotate(45deg);bottom: 8px;}
+				&:first-child{@include rotate(-45deg);top: 11px;}
+				&:last-child{@include rotate(45deg);bottom: 11px;}
 			}
+		}
+		@media (max-width:$md3+px){
+			 display: block; 
 		}
 	}
 
