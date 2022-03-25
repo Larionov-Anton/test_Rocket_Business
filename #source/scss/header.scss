@@ -1,6 +1,7 @@
 //====================================================================================================
 .header {
 	position: fixed;
+	z-index: 10;
 	height: 110px;
 	font-family: 'PT Sans Caption';
 	font-style: normal;
@@ -56,6 +57,9 @@
 
 	&__logo {
 		margin: 0px 35px 0px 0px;
+		@media (max-width:$md3+px){
+			 margin: 0px 0px; 
+		}
 	}
 
 	// .header__adress
@@ -116,7 +120,7 @@
 		padding: 0px 23px;
 		line-height: 43px;
 		@media (max-width:$md3+px){
-			 margin: 39px 0px 0px 19px; 
+			 margin: 39px 0px 100px 0px; 
 			 background: #F6F6F6;
 			 color: #1FA181;
 		}
@@ -134,7 +138,7 @@
 	// .header__menu
 
 	&__menu {
-
+		
 	}
 }
 
@@ -147,14 +151,16 @@
 	// .menu__body
 
 	&__body {
+
+		overflow: auto;
 		@media (max-width:$md3+px){
 			background: rgba(69, 146, 127, 0.9); 
 			position: fixed;
 			width: 100%;
 			height: 100%;
-			top: 0;
+			top: 67px;
 			left: 0;
-			margin: 67px 0px 0px 0px;
+			// margin: 67px 0px 0px 0px;
 			@include tr(-200%, 0, 0);
 			@include anim(0.8s,0s);
 			&.active {
@@ -189,19 +195,15 @@
 		font-size: 16px;
 		line-height: 24px;
 		color: #FFFFFF;
-
 	}
 }
 
 .header {
 
-	
-
-
-
 	// .header__mobile
 
 	&__mobile {
+
 		display: none;
 		height: 65px; 
 		background: #F7F7F7;
@@ -230,6 +232,9 @@
 		@media (max-width:$md3+px){
 			padding: 0px 0px 0px 97px; 
 		}
+		@media (max-width: 376px){
+			padding: 0px 0px 0px 63px;  
+		}
 	}
 
 	// .header__phonelocation
@@ -250,7 +255,9 @@
 
 	// .header__menu
 
-	&__menu {}
+	&__menu {
+
+	}
 }
 
 
