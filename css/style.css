@@ -781,6 +781,7 @@ body.ie .ibg img {
 	line-height: 21px;
 	color: #364844;
 	width: 100%;
+	background: #FFFFFF;
 }
 @media (max-width: 767.98px) {
 	.header {
