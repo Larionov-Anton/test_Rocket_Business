@@ -1079,22 +1079,34 @@ body.ie .ibg img {
 }
 
 .main-screen {
-	padding: 110px 0px 0px 0px;
+	margin: 110px 0px 0px 0px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	height: 533px;
+	position: relative;
+}
+.main-screen .main-screen__empty {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 1 50%;
+	        flex: 1 1 50%;
+	background: #F8FBFA;
 }
 .main-screen__textbody {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	-ms-transform: translate3d(-50%, -50%, 0);
+	-o-transform: translate3d(-50%, -50%, 0);
+	-moz-transform: translate3d(-50%, -50%, 0);
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	    -ms-flex-direction: column;
@@ -1102,7 +1114,8 @@ body.ie .ibg img {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 1 50%;
 	        flex: 1 1 50%;
-	background: #F8FBFA;
+	max-width: 1140px;
+	width: 100%;
 }
 .main-screen__tittle {
 	font-family: "PT Sans Caption";
@@ -1124,5 +1137,4 @@ body.ie .ibg img {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 1 50%;
 	        flex: 1 1 50%;
-	height: 553px;
 }

@@ -89,19 +89,30 @@ body {
 
 .main-screen {
 
-		padding: 110px 0px 0px 0px;
+		margin: 110px 0px 0px 0px;
 		display: flex;
 		height: 533px;
+		position: relative;
+
+		.main-screen__empty {
+			flex: 1 1 50%;
+			background: #F8FBFA;	
+		}
+
 
 		// .main-screen__textbody
 
 		&__textbody {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			@include tr(-50%, -50%, 0);
 			display: flex;
 			justify-content: center;
-			align-items: center;
 			flex-direction: column;
 			flex: 1 1 50%;
-			background: #F8FBFA;	
+			max-width: $mw + px;
+			width: 100%;
 		}
 
 		// .main-screen__tittle
@@ -130,7 +141,6 @@ body {
 
 		&__image {
 			flex: 1 1 50%;
-			height: 553px;
 		}
 }
 
