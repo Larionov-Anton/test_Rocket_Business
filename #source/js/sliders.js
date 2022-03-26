@@ -20,6 +20,11 @@ if($('.slider__body ').length>0){
 	});
 }
 
+var slider = $('.slider__body');
+	$('.slider__count-totall').text( slider.slick("getSlick").slideCount);
+	$(".slider__body").on('afterChange', function(event, slick, currentSlide){
+	     $(".slider__count-current").text(currentSlide + 1);
+	});
 
 /*
 

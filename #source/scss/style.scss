@@ -319,16 +319,21 @@ body {
 
 		&__count {
 			text-align: center;
-			margin: 35px 0px 0px 0px;
+			margin: 40px 0px 0px 0px;
+			color: #E1E1E1;
 		}
 
 		// .slider__count-current
 
-		&__count-current {}
+		&__count-current {
+			color: #364844;
+		}
 
 		// .slider__count-totall
 
-		&__count-totall {}
+		&__count-totall {
+			
+		}
 
 	}
 

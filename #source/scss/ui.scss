@@ -203,21 +203,24 @@ body.ie {
 	.slick-arrow {
 		&.slick-prev {
 			position: absolute;
-			bottom: -50px;
-			left: 40%;
+			bottom: -55px;
+			left: 50%;
 			width: 34px;
 			height: 17px;
 			background: url('../../img/icons/slider_arrow_left.svg') 0 0 no-repeat;
+			@include tr(-200%, 0, 0);
 		}
 		&.slick-next {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			bottom: -50px;
-			right: 40%;
+			bottom: -55px;
+			right: 50%;
 			width: 34px;
 			height: 17px;
 			background: url('../../img/icons/slider_arrow_right.svg') 0 0 no-repeat;
+			@include tr(200%, 0, 0);
+			
 		}
 	}
 	.slick-dots {
