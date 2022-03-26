@@ -61,7 +61,7 @@ body {
 	}
 	@media (max-width: $md3+px) {
 		max-width: none;
-		padding: 0 10px;
+		padding: 0 17px;
 	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
@@ -93,10 +93,16 @@ body {
 		display: flex;
 		height: 533px;
 		position: relative;
-
+		@media (max-width:$md3+px){
+			 margin: 65px 0px 0px 0px; 
+			 flex-direction: column;
+		}
 		.main-screen__empty {
 			flex: 1 1 50%;
-			background: #F8FBFA;	
+			background: #F8FBFA;
+			@media (max-width:$md3+px){
+				 display: none;
+			}
 		}
 
 
@@ -113,6 +119,20 @@ body {
 			flex: 1 1 50%;
 			max-width: $mw + px;
 			width: 100%;
+			@media (max-width: $md1+px) {
+				max-width: 970px;
+			}
+			@media (max-width: $md2+px) {
+				max-width: 750px;
+			}
+			@media (max-width: $md3+px) {
+				max-width: none;
+				padding: 0 10px;
+				@include tr(0, 0, 0);
+				position: static;
+				order: 2;
+				padding: 35px 17px 72px 17px;
+			}
 		}
 
 		// .main-screen__tittle
@@ -126,6 +146,14 @@ body {
 			color: #364844;
 			max-width: 416px;
 			margin: 0px 0px 14px 0px;
+			@media (max-width:$md2+px){
+				font-size: 26px;
+				line-height: 34px;
+				max-width: 316px;
+			}
+			@media (max-width:$md3+px){
+				max-width: 416px; 
+			}
 		}
 
 		// .main-screen__text
@@ -135,12 +163,25 @@ body {
 			font-size: 16px;
 			line-height: 24px;
 			max-width: 416px;
+			@media (max-width:$md2+px){
+				font-size: 14px;
+				line-height: 22px;
+				max-width: 316px;
+			}
+			@media (max-width:$md3+px){
+				font-size: 16px;
+				line-height: 24px; 
+				max-width: 416px;
+			}
 		}
 
 		// .main-screen__image
 
 		&__image {
 			flex: 1 1 50%;
+			@media (max-width:$md3+px){
+				 order: 1; 
+			}
 		}
 }
 

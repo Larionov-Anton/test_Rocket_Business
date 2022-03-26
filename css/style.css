@@ -122,7 +122,7 @@ body.lock {
 @media (max-width: 767.98px) {
 	.container {
 		max-width: none;
-		padding: 0 10px;
+		padding: 0 17px;
 	}
 }
 
@@ -1086,11 +1086,25 @@ body.ie .ibg img {
 	height: 533px;
 	position: relative;
 }
+@media (max-width: 767.98px) {
+	.main-screen {
+		margin: 65px 0px 0px 0px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+}
 .main-screen .main-screen__empty {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 1 50%;
 	        flex: 1 1 50%;
 	background: #F8FBFA;
+}
+@media (max-width: 767.98px) {
+	.main-screen .main-screen__empty {
+		display: none;
+	}
 }
 .main-screen__textbody {
 	position: absolute;
@@ -1117,6 +1131,32 @@ body.ie .ibg img {
 	max-width: 1140px;
 	width: 100%;
 }
+@media (max-width: 1152px) {
+	.main-screen__textbody {
+		max-width: 970px;
+	}
+}
+@media (max-width: 991.98px) {
+	.main-screen__textbody {
+		max-width: 750px;
+	}
+}
+@media (max-width: 767.98px) {
+	.main-screen__textbody {
+		max-width: none;
+		padding: 0 10px;
+		transform: translate3d(0, 0, 0);
+		-webkit-transform: translate3d(0, 0, 0);
+		-ms-transform: translate3d(0, 0, 0);
+		-o-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		position: static;
+		-webkit-box-ordinal-group: 3;
+		    -ms-flex-order: 2;
+		        order: 2;
+		padding: 35px 17px 72px 17px;
+	}
+}
 .main-screen__tittle {
 	font-family: "PT Sans Caption";
 	font-style: normal;
@@ -1127,16 +1167,49 @@ body.ie .ibg img {
 	max-width: 416px;
 	margin: 0px 0px 14px 0px;
 }
+@media (max-width: 991.98px) {
+	.main-screen__tittle {
+		font-size: 26px;
+		line-height: 34px;
+		max-width: 316px;
+	}
+}
+@media (max-width: 767.98px) {
+	.main-screen__tittle {
+		max-width: 416px;
+	}
+}
 .main-screen__text {
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 24px;
 	max-width: 416px;
 }
+@media (max-width: 991.98px) {
+	.main-screen__text {
+		font-size: 14px;
+		line-height: 22px;
+		max-width: 316px;
+	}
+}
+@media (max-width: 767.98px) {
+	.main-screen__text {
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 416px;
+	}
+}
 .main-screen__image {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 1 50%;
 	        flex: 1 1 50%;
+}
+@media (max-width: 767.98px) {
+	.main-screen__image {
+		-webkit-box-ordinal-group: 2;
+		    -ms-flex-order: 1;
+		        order: 1;
+	}
 }
 
 .slider {
