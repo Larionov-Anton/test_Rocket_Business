@@ -190,10 +190,17 @@ body {
 .slider {
 
 	margin: 0px 0px 160px 0px;
+	
 
 	// .slider__body
 
 	&__body {
+
+	}
+
+	// .slider__item 
+
+	&__item {
 		position: relative;
 		height: 440px;
 	}
@@ -290,7 +297,7 @@ body {
 		line-height: 21px;
 		color: #FFFFFF;
 		text-align: center;
-		line-height: 42px;
+		line-height: 44px;
 		margin: 0px 14px 0px 0px;
 	}
 
@@ -303,8 +310,29 @@ body {
 		background: #E2F0EF;
 		border: 1px solid #0DBC91;
 		text-align: center;
-		line-height: 39px;
+		line-height: 41px;
 	}
+
+	.slider {
+
+		// .slider__count
+
+		&__count {
+			text-align: center;
+			margin: 35px 0px 0px 0px;
+		}
+
+		// .slider__count-current
+
+		&__count-current {}
+
+		// .slider__count-totall
+
+		&__count-totall {}
+
+	}
+
+
 }
 
 

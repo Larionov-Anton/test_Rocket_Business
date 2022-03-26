@@ -1,10 +1,10 @@
 //SLIDERS
-if($('.mainslider').length>0){
-	$('.mainslider').slick({
+if($('.slider__body ').length>0){
+	$('.slider__body ').slick({
 		//autoplay: true,
 		//infinite: false,
-		dots: true,
-		arrows: false,
+		dots: false,
+		arrows: true,
 		accessibility:false,
 		slidesToShow:1,
 		autoplaySpeed: 3000,
@@ -19,6 +19,8 @@ if($('.mainslider').length>0){
 		}]
 	});
 }
+
+
 /*
 
 
