@@ -1185,10 +1185,22 @@ body.ie .ibg img {
 	margin: 0px 0px 25px 0px;
 }
 .slider__list li {
+	position: relative;
 	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 16px;
 }
 .slider__list li:last-child {
 	margin: 0px;
+}
+.slider__list li::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 7px;
+	height: 7px;
+	background: #1FA181;
+	border-radius: 50%;
 }
 .slider__price {
 	font-size: 20px;
