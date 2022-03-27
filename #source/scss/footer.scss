@@ -1,5 +1,60 @@
 footer{}
 //====================================================================================================
+.footer {
+
+	height: 144px;
+	background-color: #08664F;
+
+	// .footer__row
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 144px;
+	}
+
+	// .footer__logo
+
+	&__logo {}
+
+	// .footer__menu
+
+	&__menu {}
+
+	// .footer__social
+
+	&__social {
+		display: inline-block;
+		a {
+			margin: 0px 15px 0px 0px;
+			&:last-child {
+				margin: 0px 0px 0px 0px;
+			}
+		}
+		
+	}
+}
+
+.menu {
+
+	// .menu__icon
+
+	&__icon {}
+
+	// .menu__body
+
+	&__body {}
+
+	// .menu__list
+
+	&__list {}
+
+	// .menu__link
+
+	&__link {}
+}
+
 
 //====================================================================================================
 
