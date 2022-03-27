@@ -5,18 +5,29 @@ footer{}
 	height: 144px;
 	background-color: #08664F;
 
+	@media (max-width:$md3+px){
+		height: 65px; 
+	}
+
 	// .footer__row
 
 	&__row {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: 144px;
+		height: 100%;
 	}
 
 	// .footer__logo
 
-	&__logo {}
+	&__logo {
+		@media (max-width:$md3+px){
+			 img {
+				 width: 62px;
+				 height: 19px;
+			 } 
+		}
+	}
 
 	// .footer__menu
 
@@ -31,29 +42,15 @@ footer{}
 			&:last-child {
 				margin: 0px 0px 0px 0px;
 			}
+			img {
+				width: 25px;
+				height: 25px;
+			}
 		}
 		
 	}
 }
 
-.menu {
-
-	// .menu__icon
-
-	&__icon {}
-
-	// .menu__body
-
-	&__body {}
-
-	// .menu__list
-
-	&__list {}
-
-	// .menu__link
-
-	&__link {}
-}
 
 
 //====================================================================================================
