@@ -255,7 +255,7 @@ input[type=text], input[type=email], input[type=tel], textarea {
 	font-family: "PT Sans Caption";
 	font-style: normal;
 	font-weight: 400;
-	font-size: 26px;
+	font-size: 22px;
 	color: #868686;
 	margin: 0px 0px 1em 0px;
 	padding: 7px 10px;
@@ -266,6 +266,12 @@ input[type=text], input[type=email], input[type=tel], textarea {
 .input.focus {
 	color: #364844;
 }
+@media (max-width: 767.98px) {
+	.input {
+		font-size: 14px;
+	}
+}
+
 textarea.input {
 	resize: none;
 	padding: 0px 0px;
@@ -1517,14 +1523,26 @@ body.ie .ibg img {
 	font-family: "PT Sans Caption";
 	font-style: normal;
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 36px;
 	line-height: 34px;
 	color: #364844;
 	margin: 10px 0px 1em 0px;
 	text-align: center;
 }
+@media (max-width: 767.98px) {
+	.popup-signup__title {
+		font-size: 28px;
+	}
+}
 .popup-signup__btn {
 	width: 230px;
 	height: 50px;
 	font-size: 17px;
+}
+@media (max-width: 767.98px) {
+	.popup-signup__btn {
+		width: 196px;
+		height: 43px;
+		font-size: 14px;
+	}
 }
