@@ -67,11 +67,24 @@
 //<INPUT (inp+tab)>====================================================================================================
 input[type=text],input[type=email],input[type=tel],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
 .input{
-	border-radius: 0 !important;
+	border-radius: 5px !important;
 	width: 100%;
 	display: block;
 	padding: 0px 20px;
-	&.focus{}
+	border: 3px solid #1FA181;
+	font-family: 'PT Sans Caption';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	color: #868686;
+	margin: 0px 0px 1em 0px;
+	padding: 7px 10px;
+	&:last-child {
+		margin: 0px 0px 0px 0px;
+	}
+	&.focus{
+		color: #364844;
+	}
 	&.err{}
 }
 textarea.input{

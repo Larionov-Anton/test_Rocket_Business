@@ -167,9 +167,13 @@
 					<div class="popup-signup__body">
 						<div class="popup-signup__content">
 							<a href="#header" class="popup-signup__close" >X</a>
-							<div class="popup-signup__title">Попап</div>
-							<div class="popup-signup__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus magnam neque inventore provident accusantium illo illum officia, quisquam cupiditate nesciunt cum veritatis praesentium, aliquam eius. Recusandae, quaerat impedit? Vero, quia.
-							</div>
+							<div class="popup-signup__title">Заполните форму ниже</div>
+							<form action="#" class="popup-signup__form">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя" class="input">
+								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Фамилия" class="input">
+								<input autocomplete="off" type="tel" name="form[]" data-value="Телефон" class="input phone">
+								<button type="submit" class="popup-signup__btn btn">Записаться на прием</button>
+							</form>
 						</div>
 					</div>
 				</div>
