@@ -99,6 +99,7 @@
 		margin: 0px 35px 0px 0px;
 		padding: 0px 0px 0px 35px;
 		color: #364844;
+		@include anim(0.5s,0s);
 		&:before {
 			content: '';
 			position: absolute;
@@ -107,19 +108,15 @@
 			background: url('../../img/icons/whatsapp.svg') center no-repeat ;
 			height: 28px;
 			width: 28px;
-			// border-radius: 50%;
+		}
+		&:hover {
+			text-shadow: 1px 1px 7px;
 		}
 	}
 
 	// .header__button
 
 	&__button {
-		// width: 196px;
-		// height: 43px;
-		// background: #0DBC91;
-		// color: #FFFFFF;
-		// border-radius: 50px;
-		// padding: 0px 23px;
 		line-height: 43px;
 		@media (max-width:$md3+px){
 			 margin: 39px 0px 100px 0px; 
@@ -197,6 +194,10 @@
 		font-size: 16px;
 		line-height: 24px;
 		color: #FFFFFF;
+		@include anim(0.5s,0s);
+		&:hover {
+			color: #B6DDEB;
+		}
 	}
 }
 

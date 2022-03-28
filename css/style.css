@@ -149,6 +149,12 @@ body.lock {
 	padding: 0px 23px;
 	text-align: center;
 	line-height: 43px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+.btn:hover {
+	color: #B6DDEB;
 }
 .btn.fw {
 	width: 100%;
@@ -917,6 +923,9 @@ body.ie .ibg img {
 	margin: 0px 35px 0px 0px;
 	padding: 0px 0px 0px 35px;
 	color: #364844;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
 }
 .header__phone:before {
 	content: "";
@@ -926,6 +935,9 @@ body.ie .ibg img {
 	background: url("../../img/icons/whatsapp.svg") center no-repeat;
 	height: 28px;
 	width: 28px;
+}
+.header__phone:hover {
+	text-shadow: 1px 1px 7px;
 }
 .header__button {
 	line-height: 43px;
@@ -1006,6 +1018,12 @@ body.ie .ibg img {
 	font-size: 16px;
 	line-height: 24px;
 	color: #FFFFFF;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+.menu__link:hover {
+	color: #B6DDEB;
 }
 
 .header__mobile {
