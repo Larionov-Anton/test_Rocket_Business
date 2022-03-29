@@ -1505,6 +1505,11 @@ body.ie .ibg img {
 	        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 	border-radius: 5px;
 }
+@media (max-width: 767.98px) {
+	.popup__content {
+		padding: 20px 10px 10px 10px;
+	}
+}
 .popup__close {
 	position: absolute;
 	width: 20px;
@@ -1544,6 +1549,8 @@ body.ie .ibg img {
 @media (max-width: 767.98px) {
 	.popup__title {
 		font-size: 28px;
+		font-size: 24px;
+		margin: 10px 0px 0.5em 0px;
 	}
 }
 .popup__btn {
@@ -1562,6 +1569,11 @@ body.ie .ibg img {
 .form__item {
 	margin: 0px 0px 20px 0px;
 }
+@media (max-width: 767.98px) {
+	.form__item {
+		margin: 0px 0px 10px 0px;
+	}
+}
 .form__label {
 	display: block;
 	font-family: "PT Sans Caption";
@@ -1579,6 +1591,11 @@ body.ie .ibg img {
 	width: 100%;
 	border: 3px solid #0DBC91;
 	font-size: 16px;
+}
+@media (max-width: 767.98px) {
+	.form__input {
+		padding: 0px 10px;
+	}
 }
 .form textarea.form__input {
 	min-height: 100px;

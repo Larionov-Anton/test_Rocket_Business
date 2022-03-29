@@ -403,6 +403,9 @@ body {
 		opacity: 0;
 		transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 		border-radius: 5px;
+		@media (max-width:$md3+px){
+			padding: 20px 10px 10px 10px; 
+		}
 	}
 
 	// .popup__close
@@ -447,6 +450,8 @@ body {
 		text-align: center;
 		@media (max-width:$md3+px){
 			font-size: 28px; 
+			font-size: 24px;
+			margin: 10px 0px 0.5em 0px; 
 		}
 	}
 
@@ -474,6 +479,9 @@ body {
 
 	&__item {
 		margin: 0px 0px 20px 0px;
+		@media (max-width:$md3+px){
+			margin: 0px 0px 10px 0px; 
+		}
 	}
 
 	// .form__label
@@ -498,6 +506,9 @@ body {
 		width: 100%;
 		border: 3px solid #0DBC91;
 		font-size: 16px;
+		@media (max-width:$md3+px){
+			padding: 0px 10px; 
+		}
 	}
 
 	textarea.form__input {
