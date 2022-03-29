@@ -357,7 +357,7 @@ body {
 
 //====================================================================================================
 
-.popup-signup {
+.popup {
 
 	position: fixed;
 	width: 100%;
@@ -372,24 +372,14 @@ body {
 	overflow-x: hidden;
 	transition: all 0.8s ease 0s;
 
-	&:target {
+	&.open {
 		opacity: 1;
 		visibility: visible;
 	}
 
-	&:target &__content {
+	&.open &__content {
 		transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 		opacity: 1;
-	}
-
-	// .popup-signup__area
-	
-	&__area {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
 	}
 
 	// .popup__body

@@ -1454,7 +1454,7 @@ body.ie .ibg img {
 .slider .slider__count-current {
 	color: #364844;
 }
-.popup-signup {
+.popup {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -1470,23 +1470,16 @@ body.ie .ibg img {
 	-o-transition: all 0.8s ease 0s;
 	transition: all 0.8s ease 0s;
 }
-.popup-signup:target {
+.popup.open {
 	opacity: 1;
 	visibility: visible;
 }
-.popup-signup:target .popup-signup__content {
+.popup.open .popup__content {
 	-webkit-transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 	        transform: perspective(600px) translate(0px, 0%) rotateX(0deg);
 	opacity: 1;
 }
-.popup-signup__area {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-}
-.popup-signup__body {
+.popup__body {
 	min-height: 100%;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1499,7 +1492,7 @@ body.ie .ibg img {
 	        justify-content: center;
 	padding: 30px 10px;
 }
-.popup-signup__content {
+.popup__content {
 	position: relative;
 	max-width: 800px;
 	background-color: #fff;
@@ -1512,14 +1505,14 @@ body.ie .ibg img {
 	        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 	border-radius: 5px;
 }
-.popup-signup__close {
+.popup__close {
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	font-size: 30px;
 	color: #0DBC91;
 }
-.popup-signup__title {
+.popup__title {
 	font-family: "PT Sans Caption";
 	font-style: normal;
 	font-weight: 700;
@@ -1530,17 +1523,17 @@ body.ie .ibg img {
 	text-align: center;
 }
 @media (max-width: 767.98px) {
-	.popup-signup__title {
+	.popup__title {
 		font-size: 28px;
 	}
 }
-.popup-signup__btn {
+.popup__btn {
 	width: 230px;
 	height: 50px;
 	font-size: 17px;
 }
 @media (max-width: 767.98px) {
-	.popup-signup__btn {
+	.popup__btn {
 		width: 196px;
 		height: 43px;
 		font-size: 14px;
