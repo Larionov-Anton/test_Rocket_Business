@@ -409,11 +409,30 @@ body {
 
 	&__close {
 		position: absolute;
+		width: 20px;
+		height: 20px;
 		top: 10px;
 		right: 10px;
-		font-size: 30px;
-		color: #0DBC91;
+		span {
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 3px;
+			top: 50%;
+			left: 0;
+			background-color: #0DBC91;
+			
+			&:first-child {
+				transform: rotate(45deg);
+			}
+
+			&:last-child {
+				transform: rotate(-45deg);
+			}
+		}
+		
 	}
+
 
 	// .popup__title
 
@@ -448,16 +467,61 @@ body {
 
 }
 
-.popup-signup {
 
-	// .popup-signup__form
+.form {
 
-	&__form {}
+	// .form__item
+
+	&__item {
+		margin: 0px 0px 20px 0px;
+	}
+
+	// .form__label
+
+	&__label {
+		display: block;
+		font-family: 'PT Sans Caption';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 1em;
+		color: #364844;
+		margin: 0px 0px 10px 0px;
+	}
+
+	// .form__input
+
+	&__input {
+		height: 35px;
+		padding: 0px 20px;
+		border-radius: 5px;
+		width: 100%;
+		border: 3px solid #0DBC91;
+		font-size: 16px;
+	}
+
+	textarea.form__input {
+		min-height: 100px;
+		resize: vertical;
+		padding: 10px;
+	}
+
 }
-.input {
+
+.checkbox {
+
+	// .checkbox__label
+
+	&__label {}
+
+	// .checkbox__input
+
+	&__input {}
+
 }
-.phone {
-}
+
+
+
 
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================

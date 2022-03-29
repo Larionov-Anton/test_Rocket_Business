@@ -165,14 +165,43 @@
 				<div id="popup" class="popup-signup popup">
 					<div class="popup__body">
 						<div class="popup__content">
-							<a href="#header" class="popup__close">X</a>
+							<a href="#header" class="popup__close">
+								<span></span>
+								<span></span>
+							</a>
 							<div class="popup__title">Заполните форму ниже</div>
-							<form action="#" class="popup__form">
-								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Имя" class="input">
-								<input autocomplete="off" type="text" name="form[]" data-error="Ошибка" data-value="Фамилия" class="input">
-								<input autocomplete="off" type="tel" name="form[]" data-value="Телефон" class="input phone">
+
+							<form action="#" id="form" class="popup__form form">
+								<div class="form__item">
+									<label for="formName" class="form__label" >Имя*</label>
+									<input id="formName" type="text" name="name" class="form__input">
+								</div>
+
+								<div class="form__item">
+									<label for="formEmail" class="form__label">Email*</label>
+									<input id="formEmail" type="email" name="Email" class="form__input">
+								</div>
+
+								<div class="form__item">
+									<label for="formTel" class="form__label">Телефон*</label>
+									<input id="formTel" type="tel" name="tel" class="form__input">
+								</div>
+
+								<div class="form__item">
+									<label for="formMessage" class="form__label">Сообщение:</label>
+									<textarea name="message" id="formMessage" class="form__input"></textarea>
+								</div>
+
+								<div class="form__item">
+									<div class="checkbox">
+										<input checked id="formArgeement" type="checkbox" name="agreement" class="checkbox__input">
+										<label for="formArgeement" class="checkbox__label">Я даю свое согласие на обработку персональных данных</label>
+									</div>
+								</div>
+
 								<button type="submit" class="popup__btn btn">Записаться на прием</button>
 							</form>
+
 						</div>
 					</div>
 				</div>

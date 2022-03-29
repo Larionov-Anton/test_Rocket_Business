@@ -1,3 +1,4 @@
+
 // *Адаптивное меню бургер
 
 let iconMenu = document.querySelector(".icon-menu");
@@ -61,11 +62,12 @@ function popupOpen(curentPopup) {
 			bodyLock();
 		}
 		curentPopup.classList.add('open');
-		curentPopup.addEventListener('click', function(e) {
-			if (!e.target.closest('.popup-content')) {
-				popupClose (e.target.closest('.popup'));
-			}
-		});
+
+		// curentPopup.addEventListener('click', function(e) {
+		// 	if (!e.target.closest('.popup-content')) {
+		// 		popupClose (e.target.closest('.popup'));
+		// 	}
+		// });
 	}
 }
 
@@ -128,6 +130,6 @@ function bodyUnlock () {
 	}, timeout);
 }
 
-
+// ====================================================================================================
 
 
