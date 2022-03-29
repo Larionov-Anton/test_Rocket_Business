@@ -981,11 +981,23 @@ body.ie .ibg img {
 	    -ms-flex-align: center;
 	        align-items: center;
 }
+.header__menu {
+	height: 100%;
+}
+
 .menu__body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 100%;
 	overflow: auto;
 }
 @media (max-width: 767.98px) {
 	.menu__body {
+		display: block;
 		background: rgba(69, 146, 127, 0.9);
 		position: fixed;
 		width: 100%;
