@@ -326,6 +326,11 @@ body {
 		border: 1px solid #0DBC91;
 		text-align: center;
 		line-height: 41px;
+		&:hover {
+			background-color: transparent;
+			border: 1px solid #077e60;
+			color: #077e60;
+		}
 	}
 
 	.slider {
@@ -463,6 +468,16 @@ body {
 		width: 230px;
 		height: 50px;
 		font-size: 17px;
+		box-shadow: 0 5px 5px #161b13;
+		position: relative;
+		top: 0;
+		&:hover {
+			background-color: #077e60;
+		}
+		&:active {
+			top: 3px;
+			box-shadow: 0 2px 5px #161b13;
+		}
 		@media (max-width:$md3+px){
 			width: 196px;
 			height: 43px; 
@@ -506,6 +521,9 @@ body {
 		width: 100%;
 		border: 3px solid #0DBC91;
 		font-size: 16px;
+		&:focus {
+			box-shadow: 0 0 5px #0DBC91;
+		}
 		@media (max-width:$md3+px){
 			padding: 0px 10px; 
 		}
@@ -523,11 +541,43 @@ body {
 
 	// .checkbox__label
 
-	&__label {}
+	&__label {
+		font-size: 16px;
+		line-height: 140%;
+		display: inline-flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+		&::before {
+			content: '';
+			flex: 0 0 24px;
+			align-self: start;
+			height: 24px;
+			margin: 0px 10px 0px 0px;
+			border: 3px solid #0DBC91;
+		}
+		&::after {
+			transition: all 0.5s ease;
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: 4px;
+			left: 4px;
+			border-radius: 4px;
+			background-color: #0DBC91;
+			transform: scale(0);
+		}
+	}
 
 	// .checkbox__input
 
-	&__input {}
+	&__input {
+		display: none;
+		&:checked + .checkbox__label::after {
+			transform: scale(1);
+		}
+	}
 
 }
 

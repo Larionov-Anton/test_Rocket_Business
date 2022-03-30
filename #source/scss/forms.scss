@@ -19,7 +19,7 @@
 	line-height: 43px;
 	@include anim(0.5s,0s);
 	&:hover {
-		color: #B6DDEB;
+		background-color: #077e60;
 	}
 	&.fw{width: 100%;}
 }

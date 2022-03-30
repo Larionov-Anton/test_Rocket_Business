@@ -154,7 +154,7 @@ body.lock {
 	transition: all 0.5s ease 0s;
 }
 .btn:hover {
-	color: #B6DDEB;
+	background-color: #077e60;
 }
 .btn.fw {
 	width: 100%;
@@ -1458,6 +1458,11 @@ body.ie .ibg img {
 	text-align: center;
 	line-height: 41px;
 }
+.slider__button-more:hover {
+	background-color: transparent;
+	border: 1px solid #077e60;
+	color: #077e60;
+}
 .slider .slider__count {
 	text-align: center;
 	margin: 40px 0px 0px 0px;
@@ -1569,6 +1574,18 @@ body.ie .ibg img {
 	width: 230px;
 	height: 50px;
 	font-size: 17px;
+	-webkit-box-shadow: 0 5px 5px #161b13;
+	        box-shadow: 0 5px 5px #161b13;
+	position: relative;
+	top: 0;
+}
+.popup__btn:hover {
+	background-color: #077e60;
+}
+.popup__btn:active {
+	top: 3px;
+	-webkit-box-shadow: 0 2px 5px #161b13;
+	        box-shadow: 0 2px 5px #161b13;
 }
 @media (max-width: 767.98px) {
 	.popup__btn {
@@ -1604,6 +1621,10 @@ body.ie .ibg img {
 	border: 3px solid #0DBC91;
 	font-size: 16px;
 }
+.form__input:focus {
+	-webkit-box-shadow: 0 0 5px #0DBC91;
+	        box-shadow: 0 0 5px #0DBC91;
+}
 @media (max-width: 767.98px) {
 	.form__input {
 		padding: 0px 10px;
@@ -1613,4 +1634,53 @@ body.ie .ibg img {
 	min-height: 100px;
 	resize: vertical;
 	padding: 10px;
+}
+
+.checkbox__label {
+	font-size: 16px;
+	line-height: 140%;
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+.checkbox__label::before {
+	content: "";
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 24px;
+	        flex: 0 0 24px;
+	-ms-flex-item-align: start;
+	    -ms-grid-row-align: start;
+	    align-self: start;
+	height: 24px;
+	margin: 0px 10px 0px 0px;
+	border: 3px solid #0DBC91;
+}
+.checkbox__label::after {
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	top: 4px;
+	left: 4px;
+	border-radius: 4px;
+	background-color: #0DBC91;
+	-webkit-transform: scale(0);
+	    -ms-transform: scale(0);
+	        transform: scale(0);
+}
+.checkbox__input {
+	display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+	-webkit-transform: scale(1);
+	    -ms-transform: scale(1);
+	        transform: scale(1);
 }
