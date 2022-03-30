@@ -471,9 +471,6 @@ body {
 		box-shadow: 0 5px 5px #161b13;
 		position: relative;
 		top: 0;
-		&:hover {
-			background-color: #077e60;
-		}
 		&:active {
 			top: 3px;
 			box-shadow: 0 2px 5px #161b13;
@@ -521,6 +518,10 @@ body {
 		width: 100%;
 		border: 3px solid #0DBC91;
 		font-size: 16px;
+		&._error {
+			border: 3px solid rgb(180, 96, 96);
+		}
+
 		&:focus {
 			box-shadow: 0 0 5px #0DBC91;
 		}

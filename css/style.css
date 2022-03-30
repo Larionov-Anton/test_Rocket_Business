@@ -1579,9 +1579,6 @@ body.ie .ibg img {
 	position: relative;
 	top: 0;
 }
-.popup__btn:hover {
-	background-color: #077e60;
-}
 .popup__btn:active {
 	top: 3px;
 	-webkit-box-shadow: 0 2px 5px #161b13;
@@ -1620,6 +1617,9 @@ body.ie .ibg img {
 	width: 100%;
 	border: 3px solid #0DBC91;
 	font-size: 16px;
+}
+.form__input._error {
+	border: 3px solid #b46060;
 }
 .form__input:focus {
 	-webkit-box-shadow: 0 0 5px #0DBC91;
