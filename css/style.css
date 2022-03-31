@@ -752,7 +752,7 @@ body.ie .ibg img {
 	left: 50%;
 	width: 34px;
 	height: 17px;
-	background: url("../../img/icons/slider_arrow_left.svg") 0 0 no-repeat;
+	background: url("../img/icons/slider_arrow_left.svg") 0 0 no-repeat;
 	transform: translate3d(-200%, 0, 0);
 	-webkit-transform: translate3d(-200%, 0, 0);
 	-ms-transform: translate3d(-200%, 0, 0);
@@ -767,7 +767,7 @@ body.ie .ibg img {
 	right: 50%;
 	width: 34px;
 	height: 17px;
-	background: url("../../img/icons/slider_arrow_right.svg") 0 0 no-repeat;
+	background: url("../img/icons/slider_arrow_right.svg") 0 0 no-repeat;
 	transform: translate3d(200%, 0, 0);
 	-webkit-transform: translate3d(200%, 0, 0);
 	-ms-transform: translate3d(200%, 0, 0);
@@ -921,7 +921,7 @@ body.ie .ibg img {
 }
 .header__adress::before {
 	content: "";
-	background: url("../../img/icons/geo.svg") center no-repeat;
+	background: url("../img/icons/geo.svg") center no-repeat;
 	position: absolute;
 	width: 16px;
 	height: 33px;
@@ -952,7 +952,7 @@ body.ie .ibg img {
 	position: absolute;
 	top: -2px;
 	left: 0;
-	background: url("../../img/icons/whatsapp.svg") center no-repeat;
+	background: url("../img/icons/whatsapp.svg") center no-repeat;
 	height: 28px;
 	width: 28px;
 }
@@ -1533,7 +1533,7 @@ body.ie .ibg img {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(0, 0, 0, 0.5) url("../../img/loading.gif") center/50px no-repeat;
+	background: rgba(0, 0, 0, 0.5) url("../img/loading.gif") center/50px no-repeat;
 	opacity: 0;
 	visibility: hidden;
 	-webkit-transition: all 0.8s ease 0s;

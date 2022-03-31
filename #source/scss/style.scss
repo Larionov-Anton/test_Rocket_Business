@@ -73,7 +73,7 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "../../js/fancybox/jquery.fancybox.scss";
+//@import "../js/fancybox/jquery.fancybox.scss";
 //@import "datepicker.scss";
 //@import "fontawesome.scss";
 //@import "popover.min.scss";
@@ -419,7 +419,7 @@ body {
 			height: 100%;
 			top: 0;
 			left: 0;
-			background: rgba(0, 0, 0, 0.5) url('../../img/loading.gif') center / 50px no-repeat;
+			background: rgba(0, 0, 0, 0.5) url('../img/loading.gif') center / 50px no-repeat;
 			opacity: 0;
 			visibility: hidden;
 			transition: all 0.8s ease 0s;

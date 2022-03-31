@@ -207,7 +207,7 @@ body.ie {
 			left: 50%;
 			width: 34px;
 			height: 17px;
-			background: url('../../img/icons/slider_arrow_left.svg') 0 0 no-repeat;
+			background: url('../img/icons/slider_arrow_left.svg') 0 0 no-repeat;
 			@include tr(-200%, 0, 0);
 		}
 		&.slick-next {
@@ -218,7 +218,7 @@ body.ie {
 			right: 50%;
 			width: 34px;
 			height: 17px;
-			background: url('../../img/icons/slider_arrow_right.svg') 0 0 no-repeat;
+			background: url('../img/icons/slider_arrow_right.svg') 0 0 no-repeat;
 			@include tr(200%, 0, 0);
 			
 		}
