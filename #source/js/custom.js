@@ -132,7 +132,7 @@ function bodyUnlock () {
 
 // ====================================================================================================
 
-// *Обработка формы 
+// *Обработка формы (валидация\маска\placeholder\) 
 
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.getElementById('form');
@@ -215,8 +215,11 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
-// Маска ввода 
+// Маска ввода для телефона на JQ плагине inputmask
 
 $(document).ready(function() {
 	$("#formTel").mask("+7 (999) 999-99-99");
 });
+
+
+	
