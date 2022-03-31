@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				form.reset();
 				popupContent.classList.remove('_sending');
 			} else {
-				alert('Ошибка');
+				alert('Ошибка! Форма не отправлена!');
 				popupContent.classList.remove('_sending');
 			}
 		} else {
@@ -218,7 +218,11 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
+// Маска ввода 
 
+$(document).ready(function() {
+	$("#formTel").mask("+7 (999) 999-99-99");
+});
 //SLIDERS
 if($('.slider__body ').length>0){
 	$('.slider__body ').slick({
