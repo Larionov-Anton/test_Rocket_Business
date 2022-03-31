@@ -1522,6 +1522,24 @@ body.ie .ibg img {
 	        transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 	border-radius: 5px;
 }
+.popup__content._sending::after {
+	opacity: 1;
+	visibility: visible;
+}
+.popup__content::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.5) url("../../img/loading.gif") center/50px no-repeat;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.8s ease 0s;
+	-o-transition: all 0.8s ease 0s;
+	transition: all 0.8s ease 0s;
+}
 @media (max-width: 767.98px) {
 	.popup__content {
 		padding: 20px 10px 10px 10px;
@@ -1620,6 +1638,8 @@ body.ie .ibg img {
 }
 .form__input._error {
 	border: 3px solid #b46060;
+	-webkit-box-shadow: 0 0 5px #b46060;
+	        box-shadow: 0 0 5px #b46060;
 }
 .form__input:focus {
 	-webkit-box-shadow: 0 0 5px #0DBC91;
@@ -1636,6 +1656,11 @@ body.ie .ibg img {
 	padding: 10px;
 }
 
+.checkbox._error .checkbox__label::before {
+	border: 3px solid #b46060;
+	-webkit-box-shadow: 0 0 5px #b46060;
+	        box-shadow: 0 0 5px #b46060;
+}
 .checkbox__label {
 	font-size: 16px;
 	line-height: 140%;

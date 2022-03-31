@@ -136,12 +136,35 @@ function bodyUnlock () {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.getElementById('form');
+	const popupContent = document.querySelector('.popup__content');
 	form.addEventListener('submit', formSend);
 
 	async function formSend(e) {
 		e.preventDefault();
-
 		let error = formValidate(form);
+		let formData = new FormData(form);
+		
+		if (error === 0) {
+			popupContent.classList.add('_sending');
+
+			let response = await fetch('sendmail.php', {
+				method: 'POST',
+				body: formData
+			});
+
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				form.reset();
+				popupContent.classList.remove('_sending');
+			} else {
+				alert('Ошибка');
+				popupContent.classList.remove('_sending');
+			}
+		} else {
+			alert('Заполните обязаьельные поля');
+		}
+		
 	}
 
 	// Функция валидации формы
@@ -169,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				}
 			}
 		}
-		
+		return error;
 	}
 
 	// Добавляет класс error
