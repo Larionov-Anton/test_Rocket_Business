@@ -103,6 +103,8 @@ function bodyLock () {
 	}
 	body.style.paddingRight = lockPaddingValue;
 	body.classList.add('lock');
+	
+	
 
 	// Блокирует случайное двойное нажатие открытия popup
 	unlock = false;
@@ -113,6 +115,7 @@ function bodyLock () {
 
 // Функция разблокирования скрола 
 function bodyUnlock () {
+	const activeMenu = document.querySelector(".icon-menu");
 	setTimeout (function () {
 		if (lockPadding.length > 0) {
 			for (let index = 0; index < lockPadding.length; index++) {
@@ -121,7 +124,10 @@ function bodyUnlock () {
 			}
 		}
 		body.style.paddingRight = '0px';
-		body.classList.remove('lock');
+		if (!activeMenu.classList.contains('.active')) {
+			body.classList.remove('lock');
+		}
+		
 	}, timeout);
 
 	unlock = false;
