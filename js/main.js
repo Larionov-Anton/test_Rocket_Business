@@ -1,1 +1,270 @@
-let iconMenu=document.querySelector(".icon-menu"),menuBodyLock=document.querySelector("body"),menuBody=document.querySelector(".menu__body");iconMenu&&iconMenu.addEventListener("click",(function(){iconMenu.classList.toggle("active"),menuBodyLock.classList.toggle("lock"),menuBody.classList.toggle("active")}));const popupLinks=document.querySelectorAll(".popup-link"),body=document.querySelector("body"),lockPadding=document.querySelectorAll(".lock-padding");let unlock=!0;const timeout=800;if(popupLinks.length>0)for(let e=0;e<popupLinks.length;e++){const t=popupLinks[e];t.addEventListener("click",(function(e){const o=t.getAttribute("href").replace("#","");popupOpen(document.getElementById(o)),e.preventDefault()}))}const popupCloseIcon=document.querySelectorAll(".popup__close");if(popupCloseIcon.length>0)for(let e=0;e<popupCloseIcon.length;e++){const t=popupCloseIcon[e];t.addEventListener("click",(function(e){popupClose(t.closest(".popup")),e.preventDefault()}))}function popupOpen(e){if(e&&unlock){const t=document.querySelector(".popup.open");t?popupClose(t,!1):bodyLock(),e.classList.add("open")}}function popupClose(e,t=!0){unlock&&(e.classList.remove("open"),t&&bodyUnlock())}function bodyLock(){const e=window.innerWidth-document.querySelector(".wrapper").offsetWidth+"px";if(lockPadding.length>0)for(let t=0;t<lockPadding.length;t++){lockPadding[t].style.paddingRight=e}body.style.paddingRight=e,body.classList.add("lock"),unlock=!1,setTimeout((function(){unlock=!0}),800)}function bodyUnlock(){const e=document.querySelector(".icon-menu");setTimeout((function(){if(lockPadding.length>0)for(let e=0;e<lockPadding.length;e++){lockPadding[e].style.paddingRight="0px"}body.style.paddingRight="0px",e.classList.contains(".active")||body.classList.remove("lock")}),800),unlock=!1,setTimeout((function(){unlock=!0}),800)}document.addEventListener("keydown",(function(e){if(27===e.which){popupClose(document.querySelector(".popup.open"))}})),document.addEventListener("DOMContentLoaded",(function(){const e=document.getElementById("form"),t=document.querySelector(".popup__content");function o(e){e.parentElement.classList.add("_error"),e.classList.add("_error")}function n(e){e.parentElement.classList.remove("_error"),e.classList.remove("_error")}function c(e){return!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(e.value)}e.addEventListener("submit",(async function(l){l.preventDefault();let s=function(e){let t=0,l=document.querySelectorAll("._req");for(let e=0;e<l.length;e++){const s=l[e];n(s),s.classList.contains("_email")?c(s)&&(o(s),t++):("checkbox"===s.getAttribute("type")&&!1===s.checked||""===s.value)&&(o(s),t++)}return t}(),i=new FormData(e);if(0===s){t.classList.add("_sending");let o=await fetch("sendmail.php",{method:"POST",body:i});if(o.ok){let n=await o.json();alert(n.message),e.reset(),t.classList.remove("_sending")}else alert("Ошибка! Форма не отправлена!"),t.classList.remove("_sending")}else alert("Заполните обязаьельные поля")}))})),$(document).ready((function(){$("#formTel").mask("+7 (999) 999-99-99")})),$(".slider__body ").length>0&&$(".slider__body ").slick({dots:!1,arrows:!0,accessibility:!1,slidesToShow:1,autoplaySpeed:3e3,nextArrow:'<button type="button" class="slick-next"></button>',prevArrow:'<button type="button" class="slick-prev"></button>',responsive:[{breakpoint:768,settings:{}}]});var slider=$(".slider__body");$(".slider__count-totall").text(slider.slick("getSlick").slideCount),$(".slider__body").on("afterChange",(function(e,t,o){$(".slider__count-current").text(o+1)}));
+
+
+
+
+// *Адаптивное меню бургер
+
+let iconMenu = document.querySelector(".icon-menu");
+let menuBodyLock = document.querySelector("body");
+let menuBody = document.querySelector(".menu__body");
+if (iconMenu) {
+	iconMenu.addEventListener("click", function () {
+		iconMenu.classList.toggle("active");
+		menuBodyLock.classList.toggle("lock");
+		menuBody.classList.toggle("active");
+	});
+}
+
+// ====================================================================================================
+
+// *Popup
+
+// Все ссылки открытия popup
+const popupLinks = document.querySelectorAll('.popup-link');
+// Блокировка скрола общего контента
+const body = document.querySelector('body');
+// Исправление смещения контента при блокировке скрола
+const lockPadding = document.querySelectorAll('.lock-padding');
+// Защита от двойных нажатий
+let unlock = true;
+// Блокировка скрола. Указать продолжительность transition
+const timeout = 800;
+
+// Повесить обработчк на все popup ссылки 
+if (popupLinks.length > 0) {
+	for (let index = 0; index < popupLinks.length; index++) {
+		const popupLink = popupLinks[index];
+		popupLink.addEventListener('click', function (e) {
+			const popupName = popupLink.getAttribute('href').replace('#', '');
+			const curentPopup = document.getElementById(popupName);
+			popupOpen(curentPopup);
+			e.preventDefault();
+		})
+	}
+}
+
+// Повесить обработчик на все закрывающие popup ссылки
+const popupCloseIcon = document.querySelectorAll('.popup__close');
+if (popupCloseIcon.length > 0) {
+	for (let index = 0; index < popupCloseIcon.length; index++) {
+		const cl = popupCloseIcon[index];
+		cl.addEventListener('click', function(e) {
+			popupClose(cl.closest('.popup'));
+			e.preventDefault();
+		})
+	}
+}
+
+// Функция открытия popup
+function popupOpen(curentPopup) {
+	if (curentPopup && unlock) {
+		const popupActive = document.querySelector('.popup.open');
+		if (popupActive) {
+			popupClose(popupActive, false);
+		} else {
+			bodyLock();
+		}
+		curentPopup.classList.add('open');
+
+		// curentPopup.addEventListener('click', function(e) {
+		// 	if (!e.target.closest('.popup-content')) {
+		// 		popupClose (e.target.closest('.popup'));
+		// 	}
+		// });
+	}
+}
+
+// Функция закрытия popup
+// doUnlock = true - если в popup есть еще один popup
+function popupClose (popupActive, doUnlock = true) {
+	if (unlock) {
+		popupActive.classList.remove('open');
+		if (doUnlock) {
+			bodyUnlock();
+		}
+	}
+}
+
+// Закрытие popup по Escape
+document.addEventListener('keydown', function (e) {
+	if (e.which === 27) {
+		const popupActive = document.querySelector('.popup.open');
+		popupClose(popupActive);
+	}
+})
+
+
+// Функция блокирования скрола общего контента \ исправление сдвига контента при блокировке
+function bodyLock () {
+	const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+
+	if (lockPadding.length > 0) {
+		for (let index = 0; index < lockPadding.length; index++) {
+			const el = lockPadding[index];
+			el.style.paddingRight = lockPaddingValue;
+		}
+	}
+	body.style.paddingRight = lockPaddingValue;
+	body.classList.add('lock');
+	
+	
+
+	// Блокирует случайное двойное нажатие открытия popup
+	unlock = false;
+	setTimeout(function () {
+		unlock = true;
+	}, timeout);
+}
+
+// Функция разблокирования скрола 
+function bodyUnlock () {
+	const activeMenu = document.querySelectorAll(".icon-menu");
+	setTimeout (function () {
+		if (lockPadding.length > 0) {
+			for (let index = 0; index < lockPadding.length; index++) {
+				const el = lockPadding[index];
+				el.style.paddingRight = '0px';
+			}
+		}
+		body.style.paddingRight = '0px';
+		for (let index = 0; index < activeMenu.length; index++) {
+			const el = activeMenu[index];
+			if (!activeMenu.classList.contains('.active')) {
+				body.classList.remove('lock');
+			}
+		}
+
+		
+	}, timeout);
+
+	unlock = false;
+	setTimeout(function () {
+		unlock = true;
+	}, timeout);
+}
+
+// ====================================================================================================
+
+// *Обработка формы (валидация\маска\placeholder\) 
+
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('form');
+	const popupContent = document.querySelector('.popup__content');
+	form.addEventListener('submit', formSend);
+
+	async function formSend(e) {
+		e.preventDefault();
+		let error = formValidate(form);
+		let formData = new FormData(form);
+		
+		if (error === 0) {
+			popupContent.classList.add('_sending');
+
+			let response = await fetch('sendmail.php', {
+				method: 'POST',
+				body: formData
+			});
+
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				form.reset();
+				popupContent.classList.remove('_sending');
+			} else {
+				alert('Ошибка! Форма не отправлена!');
+				popupContent.classList.remove('_sending');
+			}
+		} else {
+			alert('Заполните обязаьельные поля');
+		}
+		
+	}
+
+	// Функция валидации формы
+	
+	function formValidate(form) {
+		let error = 0;
+		let formReq = document.querySelectorAll('._req')
+
+		for (let index = 0; index < formReq.length; index++ ) {
+			const input = formReq[index];
+			formRemoveError(input);
+
+			if (input.classList.contains('_email')) {
+				if (emailTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
+				formAddError(input);
+				error++;
+			} else {
+				if (input.value === '') {
+					formAddError(input);
+					error++;
+				}
+			}
+		}
+		return error;
+	}
+
+	// Добавляет класс error
+	function formAddError (input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+
+	// Удаляет класс error
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+
+	// Функция проверки email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+	}
+
+})
+
+
+// Маска ввода для телефона на JQ плагине inputmask
+
+$(document).ready(function() {
+	$("#formTel").mask("+7 (999) 999-99-99");
+});
+
+
+	
+//SLIDERS
+if($('.slider__body ').length>0){
+	$('.slider__body ').slick({
+		//autoplay: true,
+		//infinite: false,
+		dots: false,
+		arrows: true,
+		accessibility:false,
+		slidesToShow:1,
+		autoplaySpeed: 3000,
+		//asNavFor:'',
+		//appendDots:
+		//appendArrows:$('.mainslider-arrows .container'),
+		nextArrow:'<button type="button" class="slick-next"></button>',
+		prevArrow:'<button type="button" class="slick-prev"></button>',
+		responsive: [{
+			breakpoint: 768,
+			settings: {}
+		}]
+	});
+}
+
+// Cчетчик слайдов
+var slider = $('.slider__body');
+	$('.slider__count-totall').text( slider.slick("getSlick").slideCount);
+	$(".slider__body").on('afterChange', function(event, slick, currentSlide){
+	     $(".slider__count-current").text(currentSlide + 1);
+	});
+
+// ====================================================================================================
+
+
