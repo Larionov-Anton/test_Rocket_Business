@@ -118,7 +118,7 @@ function bodyLock () {
 
 // Функция разблокирования скрола 
 function bodyUnlock () {
-	const activeMenu = document.querySelector(".icon-menu");
+	const activeMenu = document.querySelectorAll(".icon-menu");
 	setTimeout (function () {
 		if (lockPadding.length > 0) {
 			for (let index = 0; index < lockPadding.length; index++) {
@@ -127,9 +127,13 @@ function bodyUnlock () {
 			}
 		}
 		body.style.paddingRight = '0px';
-		if (!activeMenu.classList.contains('.active')) {
-			body.classList.remove('lock');
+		for (let index = 0; index < activeMenu.length; index++) {
+			const el = activeMenu[index];
+			if (!activeMenu.classList.contains('.active')) {
+				body.classList.remove('lock');
+			}
 		}
+
 		
 	}, timeout);
 
